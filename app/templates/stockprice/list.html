@@ -38,12 +38,12 @@ Member List
       <tr>
         <td>{{pagination.start_record_number + loop.index}}</td>
         <td>
-          <a href="/users/read/{{user.id}}" class="text-decoration-none">{{user.name}}</a>
+          {{user.symbol}}
         </td>
-        <td>{{user.email}}</td>
-        <td>{{user.roles}}</td>
-        <td>{{user.last_access_date.strftime('%Y.%m.%d %H:%M')}}</td>
-        <td>{{user.create_date.strftime('%Y.%m.%d %H:%M')}}</td>
+        <td>{{user.Close}}</td>
+        <td>{{user.Volume}}</td>
+        <td></td>
+        <td></td>
       </tr>
       {% endfor %}
     </tbody>

@@ -31,7 +31,7 @@ async def list(request:Request, page_number: Optional[int] = 1):
 
     user_list, pagination = await collection_stockprice.getsbyconditionswithpagination(conditions
                                                                      ,page_number)
-    return templates.TemplateResponse(name="users/list.html"
+    return templates.TemplateResponse(name="stockprice/list.html"
                                       , context={'request':request
                                                  , 'users' : user_list
                                                   ,'pagination' : pagination })
