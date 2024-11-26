@@ -7,6 +7,7 @@ from pydantic_settings import BaseSettings
 
 
 from app.models.users import User
+from app.models.stockprice import Stockprice
 
 import os
 class Settings(BaseSettings):
@@ -14,7 +15,7 @@ class Settings(BaseSettings):
 
     async def initialize_database(self):
         client = AsyncIOMotorClient(self.DATABASE_URL)
-        await init_beanie(database=client.get_default_database(), document_models=[User])
+        await init_beanie(database=client.get_default_database(), document_models=[User, Stockprice])
 
     class Config:
         env_file = os.path.join("app",".env")
